@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-Regular.woff2') format('woff2'),
+      url('/fonts/LavaPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-RegularItalic.woff2') format('woff2'),
+      url('/fonts/LavaPro-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-Medium.woff2') format('woff2'),
+      url('/fonts/LavaPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-MediumItalic.woff2') format('woff2'),
+      url('/fonts/LavaPro-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-Bold.woff2') format('woff2'),
+      url('/fonts/LavaPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-BoldItalic.woff2') format('woff2'),
+      url('/fonts/LavaPro-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-HeavyItalic.woff2') format('woff2'),
+      url('/fonts/LavaPro-HeavyItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lava Pro';
+  src: url('/fonts/LavaPro-Heavy.woff2') format('woff2'),
+      url('/fonts/LavaPro-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

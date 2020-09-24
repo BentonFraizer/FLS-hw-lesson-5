@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ДЗ урока №5. Поля, отступы, bs</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="maintitle">&#167; Конспект урока №5. Поля, отступы, box-sizing.</h1>
+      </header>
+      <main>
+        <div class="box-sizing">
+          <h2 class="subtitle">1. Свойство box-sizing</h2>
+          <p class="propdescription">
+            <span class="spanpropdescription">Описание:</span> В зависимости от выбранного значения свойства, браузер по-разному будет рассчитывать значения свойств width/height примененных к блочным элементам.
+          </p>
+          <div class="boxes">
+            <p>Блок с красной границей и блок с зеленой границей, расположенные  ниже в столбец, имеют следующие одинаковые значения свойств:</p>
+              <div class="codewrapper">
+                <pre>
+margin: 20px;
+padding: 20px;
+border: 2px solid some-color;
+max-width: 500px;
+</pre>
+              </div>
+            <p>
+              Как мы видим, при достаточной ширине элемента-родителя обоих блоков их ширина должна быть 500px, как мы это и прописали в стилях. Но получается следующее поведение.
+            </p>
+            <p>
+              К блоку с красной границей применено значение <span>content-box</span>. Это означает, что помимо основной ширины, явно прописанной в стилях, к ней будут добавлены значения внутренних отступов (padding) справа и слева и границ (border) тоже справа и слева. И в итоге ширина блока будет составлять 544px.
+            </p>
+            <div class="summ">
+              <p>500px + 20px + 20px + 2px + 2px = 544px</p>
+            </div>
+            <div class="contentbox">
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="spancontentbox">К этому блоку применено значение content-box.</span> Cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+            </div>
+            <div class="contentboximage">
+              <img src="./img/contentbox-image.png" alt="размеры блока с content-box">
+            </div>
+            <p>
+              К блоку с зеленой границей применено значение <span>border-box</span>. Это означает, что в основную ширину, явно прописанную в стилях, <span>уже добавлены</span> значения внутренних отступов (padding) справа и слева и границ (border) тоже справа и слева. И в итоге ширина блока будет составлять <span">ровно 500px</span>.
+            </p>
+            <div class="borderbox">
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit.  elit maxi <span class="spanborderbox">К этому блоку применено значение border-box.</span> Ula cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae repellendus repudiandae doloremque impedit eaque molestiae doloribus unde maxime. Numquam delectus ullam tempora expedita in ut distinctio dolor rem eius!
+            </div>
+            <div class="borderboximage">
+              <img src="./img/borderbox-image.png" alt="размеры блока с border-box">
+            </div>
+          </div>
+        </div>
+        <div class="padding">
+          <h2 class="subtitle">2. Свойство padding</h2>
+          <p class="propdescription">
+            <span class="spanpropdescription">Описание:</span> При помощи данного свойства задаются <span class="spanpropdescription">внутренние отступы</span> внутри блочных элементов. То есть содержимое блока отталкивается <span class="spanpropdescription">внутрь от его границ.</span> Что будет наглядно продемонстрировано на следующем примере.
+          </p>
+          <div class="withoutpadding">
+            <span class="spanwithoutpadding">К этому блоку не применено свойство padding</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur doloremque tempore voluptatibus. Corporis dicta vel officiis at sequi voluptatem nulla tempora vitae. Exercitationem soluta unde fuga doloribus molestias illo eaque quaerat itaque reprehenderit voluptate quae natus at, ratione iste ab sed, minus sapiente architecto corporis porro, nesciunt voluptatem. Laboriosam assumenda a atque laborum ipsam, exercitationem  perferendis vitae temporibus officiis vero adipisci tempora dolorem ea dignissimos at doloremque cupiditate sit error corrupti dolore dolores expedita veritatis, voluptates quae! Quisquam, consequatur. Vero repellendus, eaque consectetur ullam quidem nam, explicabo excepturi repudiandae aliquam magni enim maiores officia expedita deleniti impedit vitae cum.
+          </div>
+          <div class="withpadding">
+            <span class="spanwithpadding">К этому блоку применено свойство padding со значением 20px</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eum doloremque nam perferendis neque ex, ullam dicta accusantium quisquam, voluptate magnam nostrum impedit vitae aliquam voluptates ut culpa laudantium eligendi maxime porro architecto expedita asperiores! Eum eius, expedita, suscipit soluta nulla vitae nisi reprehenderit est quasi qui tempore. Amet delectus vel quia sed corporis sit obcaecati dolorum iste alias laborum beatae repudiandae sapiente, dolorem voluptatibus neque consequuntur consequatur voluptates ipsam hic, ullam voluptatem placeat sequi? Nesciunt aspernatur corporis qui quisquam.
+          </div>
+          <div class="paddingprops">
+            <p>Записать свойство padding можно несколькими способами.</p>
+            <ol class="paddinglist">
+              <li class="paddingitem">padding: 10px 20px 30px 40px; - запись означает: сверху будет поле размером 10px, справа - 20px, снизу - 30px, слева - 40px;</li>
+              <li class="paddingitem">padding: 10px 20px 30рх; - сверху будет 10px, влева/справа - 20рх; снизу - 30рх</li>
+              <li class="paddingitem">padding: 10px 20px; - сверху/снизу будет 10px, влева/справа будет 20рх;</li>
+              <li class="paddingitem">padding: 10px; - задаст поля размером 10рх сразу со всех сторон.</li>
+            </ol>
+            <img class="paddingclock" src="./img/clock.png" alt="clock padding understanding">
+            <p>
+              Для простоты понимания того, в какой последовательности будут применены значения свойств из первого пункта списка, ниже приводится рисунок.
+            </p>
+            <p>Также существует возможность задать значение полей отдельно для каждой стороны.</p>
+            <ol class="eachsidepaddinglist">
+              <li class="eachsidepaddingitem">padding-top - задаст размер поля сверху</li>
+              <li class="eachsidepaddingitem">padding-right - справа</li>
+              <li class="eachsidepaddingitem">padding-bottom - снизу</li>
+              <li class="eachsidepaddingitem">padding-left - слева</li>
+            </ol>
+          </div>
+        </div>
+        <div class="margin">
+          <h2 class="subtitle">3. Свойство margin</h2>
+          <p class="propdescription">
+            <span class="spanpropdescription">Описание:</span> При помощи данного свойства задаются <span class="spanpropdescription">внешние отступы</span> блочных элементов. То есть сам блок <span class="spanpropdescription">отталкивает от себя</span> окружающие его элементы.
+          </p>
+          <p>
+            Пример:
+          </p>
+          <div class="muchletters">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis veniam hic velit eligendi fugit quo, saepe sapiente nulla corporis similique, ratione minima non debitis, molestiae laborum laboriosam? Ad, sint quod dignissimos, ipsum pariatur optio dolorem quis culpa aspernatur quia officiis accusamus nihil. Illo nesciunt sed nisi temporibus <div class="withoutmargin">witoutmargin Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius laborum neque harum libero quas totam supsut <span class="spanwithoutmargin">У данного блока отсутвуют внешние отступы</span>ipsam porro. Ula, aliquam enim. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit accusantium. Velit accusantium. quisquam.</div> quisquam dignissimos, debitis quidem sint adipisci quos velit expedita assumenda deserunt non magni omnis tenetur earum ullam, doloribus reprehenderit, quibusdam consequatur. Enim explicabo, officiis eum praesentium nobis ullam, odit velit corporis id aperiam ipsum illo suscipit modi eaque pariatur sapiente laborum sequi. Atque fugit quasi adipisci earum explicabo rem nobis, in, porro maiores esse inventore optio vitae provident possimus ipsam nemo tempore dolores numquam expedita non sit pariatur iusto. Consequatur fugit, doloremque qui culpa eos veritatis. Optio ab accusamus enim incidunt tempora nisi at reiciendis dignissimos consequatur libero quasi aperiam illo explicabo culpa excepturi iure, corporis ullam doloremque deserunt asperiores facilis quisquam. Facilis, perferendis? Atque corporis totam, eligendi porro explicabo iusto quod, quo vitae voluptatibus <div class="withmargin">witoutmargin Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius laborum neque harum libero quas totam ipsam <span class="spanwithmargin">У данного блока есть внешние отступы</span> Voluptates, aliquam enim. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit accusantium, dolorum veniam.</div>rem animi modi eveniet. Soluta culpa suscipit explicabo. Ad laudantium consequuntur temporibus reiciendis nobis vel totam cum necessitatibus magni tenetur doloremque exercitationem inventore possimus minus quibusdam facilis, autem commodi velit natus sequi qui. At ratione autem nobis ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rem vel, magnam harum iusto quo officia iste totam. Quibusdam corrupti voluptate repudiandae modi quos. Doloremque totam quas beatae voluptates sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam voluptatum veritatis dicta dolores, quis et consequatur eveniet cumque possimus, reiciendis iusto quo deleniti unde saepe est sed, cum dolorum aperiam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at iste illo quidem, ratione maxime cum non expedita hic laborum distinctio obcaecati voluptate tempore perspiciatis, blanditiis facilis omnis! Voluptatem, laborum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora blanditiis ipsa eos veniam aliquid iste molestias qui at rerum corrupti velit atque alias, labore amet illo nisi rem consectetur earum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, at? Suscipit at error cumque accusamus placeat reiciendis officiis fugiat necessitatibus aliquam quasi nobis nihil magnam assumenda quaerat, aperiam voluptatem eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur corrupti accusamus harum, laudantium numquam quisquam quidem vero eligendi velit exercitationem enim inventore tenetur, possimus optio voluptates. Delectus porro non distinctio magnam debitis cum error quo reiciendis a soluta officiis rem doloremque ut facilis nesciunt, cumque mollitia in, aperiam dicta iure praesentium quisquam obcaecati? Odit accusantium eligendi quasi iste ex fugiat adipisci rem beatae. Accusantium ipsa repellat fugit tempora, quod maiores ducimus ullam veritatis provident iure harum nemo molestiae beatae reprehenderit! Nulla, consequatur officia ex voluptatibus in ipsa.
+          </div>
+          <p>
+            Запись свойства margin полностью аналогична записи свойства padding.
+          </p>
+          <div class="warnings">
+            <div class="warning">
+              1. Поля (padding) и отступы (margin) не применимы к строчным элементам!
+            </div>
+            <div class="warning">
+              2. При указании полей и отступов в процентах, значение считается от <span class="warningspan">ширины</span> элемента-родителя!  
+            </div>
+          </div>
+        </div>
+        <div class="width">
+          <h2 class="subtitle">3. Свойство width</h2>
+          <p class="propdescription">
+            <span class="spanpropdescription">Описание:</span> устанавливает ширину для всех блочных элементов и для строчного элемента <span class="spanpropdescription">&lt;img&gt;</span>.
+          </p>
+          <p>
+            Также существуют "более гибкие" аналоги свойства width, это min-width и max-width. 
+          </p>
+          <p>
+            <span class="minisubtitle">3.1 min-width</span> устанавливает <span>минимальную ширину</span> блочных элементов и элемента &lt;img&gt;. Это означает, что блок не может принимать ширину меньше, чем указано в значении свойства, а максимальное значение ограничено шириной родительского элемента. 
+          </p>
+          <p>
+            <span class="minisubtitle">3.2 max-width</span> устанавливает <span>максимальную ширину</span> блочных элементов и элемента &lt;img&gt;. Это означает, что элемент не может быть больше указанного в свойстве значения, а минимальный размер ограничивается содержимым элемента.
+          </p>
+          <p class="example">Пример №1. К зелёному блоку применено значение <span>min-width: 500px;</span></p>
+          <div class="outer1">
+            <div class="inner1">
+              <div class="inner1-1">
+                Ширина зеленого блока будет равна 50% ширины черного блока, но не меньше красной границы, т.е. 500px.
+              </div>
+            </div>
+          </div>
+          <p>Пример №2. К зелёному блоку применено значение <span>max-width: 500px;</span></p>
+          <div class="outer2">
+            <div class="inner2">
+              Максимальная ширина зеленого блока будет равна 500рх, при уменьшении ширины экрана браузера - 50% от ширины черного блока. 
+            </div>
+          </div>
+          <div class="end">To be continued...</div>
+        </div>        
+      </main>
+    </div>
+  </body>
+</html>
